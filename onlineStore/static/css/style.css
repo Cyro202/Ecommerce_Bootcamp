@@ -1,69 +1,5 @@
-/*-----------------------------------------------------------------------------------
-		Template Name: limupa - Digital Products Store ECommerce Bootstrap 4 Template
-		Template URI: http://bootexperts.com
-		Description: This is digital products store html5 template for eCommerce websites, nice and clean design;
-		Author: HasTech
-		Author URI: 
-		Version: 1.0
------------------------------------------------------------------------------------
-		CSS INDEX
-		===================
-		01. Default Style
-			1.1 Basic
-			1.2 Transition
-			1.3 Section Title
-			1.4 Default Button
-			1.5 Text Color
-			1.6 Input
-			1.8 Background Variation Set
-			1.9 Animation
-			1.10 All Navigation & Pagination
-			1.11 Owl Carousel Box Shadow
-			1.12 Li's Mobile Menu Customization 
-			1.13 Modal Area
-			1.14 Scroll Up
-		02. Home Page One
-			2.1 Header
-			2.2 Slider
-			2.3 Li's Static Top
-			2.4 Product-area css
-			2.5 Li's Banner
-			2.6 Li's Laptop Features
-			2.7 Li's Static Home Banner
-			2.8 Li's Trending Products
-				2.9 Footer
-		03. Home Page Two
-		04. Home Page Three
-		05. Home Page Four
-		06. Other Pages
-			6.1 Li's Shop Page
-			6.2 Li's Frequently Asked Question(FAQ)
-			6.3 Li's Wishlist Page
-			6.4 Li's Checkout Page
-			6.5 Li's Login Register
-			6.6 Li's Shopping Cart
-			6.7 Li's Blog Page
-			6.8 Li's Compare Page
-			6.9 Li's Contact Pages
-			6.10 Li's About Us Page
-			6.11 Li's Shop Page
-			6.12 Li's Single Product
-			6.13 Single Product Carousel Page
-			6.14 Single Product Sale Page
-			6.15 Single Product Group Page
-			6.16 Single Product Normal Page
-			6.17 Single Product Affiliate Page
-			6.18 Single Product Tab Style Left Page
-			6.19 Single Product Tab Style Right Page
-			6.20 Single Product Gallery Left Page
-			6.21 Error 404 Page
 
------------------------------------------------------------------------------------*/
 
-/* Google Fonts------------------
-	font-family: 'Poppins', sans-serif;
-	font-family: 'Rubik', sans-serif;
-*/
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i');
 /*----------------------------------------*/
 /*  01. Dfault Style
@@ -439,7 +375,7 @@ textarea:focus {
 	border: 2px solid #4FC1F0;
 	outline: none;
 }
-::-moz-placeholder {
+::-moz-plaeholder {
 	color: #444;
 	font-size: 13px;
 }
@@ -450,65 +386,67 @@ textarea:focus {
 /*  1.8 Background Variation Set
 /*----------------------------------------*/
 /*Home One | Slider Background Image*/
+
 .bg-1, .bg-2, .bg-3 {
-	background-image: url(images/slider/1.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	min-height: 475px;
-	width: 100%;
+    background-image: url('../images/slider/1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 475px;
+    width: 100%;
 }
 .bg-2 {
-	background-image: url(images/slider/2.jpg);
+    background-image: url('../images/slider/2.jpg');
 }
 .bg-3 {
-	background-image: url(images/slider/3.jpg);
+    background-image: url('../images/slider/3.jpg');
 }
-/*Home Two | Slider Background Image*/
+/* Home Two | Slider Background Image */
 .bg-4, .bg-5, .bg-6 {
-	background-image: url(images/slider/4.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	min-height: 475px;
-	width: 100%;
+    background-image: url('../images/slider/4.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 475px;
+    width: 100%;
 }
 .bg-5 {
-	background-image: url(images/slider/5.jpg);
+    background-image: url('../images/slider/5.jpg');
 }
 .bg-6 {
-	background-image: url(images/slider/6.jpg);
+    background-image: url('../images/slider/6.jpg');
 }
-/*Home Three | Slider Background Image*/
+/* Home Three | Slider Background Image */
 .bg-7, .bg-8, .bg-9 {
-	background-image: url(images/slider/7.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	min-height: 425px;
-	width: 100%;
+    background-image: url('../images/slider/7.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 425px;
+    width: 100%;
 }
 .bg-8 {
-	background-image: url(images/slider/8.jpg);
+    background-image: url('../images/slider/8.jpg');
 }
 .bg-9 {
-	background-image: url(images/slider/9.jpg);
+    background-image: url('../images/slider/9.jpg');
 }
-/*Home Four | Slider Background Image*/
+/* Home Four | Slider Background Image */
 .bg-10, .bg-11, .bg-12 {
-	background-image: url(images/slider/10.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	min-height: 770px;
-	width: 100%;
+    background-image: url('../images/slider/10.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 770px;
+    width: 100%;
 }
 .bg-11 {
-	background-image: url(images/slider/11.jpg);
+    background-image: url('../images/slider/11.jpg');
 }
 .bg-12 {
-	background-image: url(images/slider/12.jpg);
+    background-image: url('../images/slider/12.jpg');
 }
+
 /*----------------------------------------*/
 /*  li's Background Variation Set 
 /*----------------------------------------*/
@@ -1903,7 +1841,7 @@ textarea:focus {
 	position: static !important;
 }
 .megamenu-static-holder .hb-megamenu, .megamenu-holder .hb-megamenu {
-	background-image: url(images/menu/li-bg-menu.jpg);
+	background-image: url('../images/menu/li-bg-menu.jpg');
 	background-size: cover;
 	background-position: top;
 	background-repeat: no-repeat;
@@ -2066,7 +2004,8 @@ textarea:focus {
 	font-size: 16px;
 	padding: 20px 0;
 	color: #fff;
-	background-image: url(images/static-top/1.jpg);
+	background-image: url('../images/static-top/1.jpg');
+	
 	background-size: cover;
 	margin-top: 20px;
 }
@@ -2655,7 +2594,7 @@ textarea:focus {
 /*  2.7 Li's Static Home Banner
 /*----------------------------------------*/
 .li-static-home-image {
-	background-image: url(images/bg-banner/1.jpg);
+	background-image: url('../images/bg-banner/1.jpg');
 	background-size: cover;
 	height: 400px;
 	background-repeat: no-repeat;
@@ -3058,8 +2997,8 @@ text-align: center;
 	font-family: fontawesome;
 }
 .category-heading > h2 > i {
-	float: ;
-	text-align: ;
+	float: left ;
+	text-align: center;
 	float: right;
 	padding-right: 20px;
 	font-size: 12px;
