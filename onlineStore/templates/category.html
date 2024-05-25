@@ -1,10 +1,7 @@
-
 {% load static %}
 
 <!doctype html>
 <html class="no-js" lang="zxx">
-
-<!-- index28:48-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -46,7 +43,7 @@
     <!-- Modernizr js -->
     <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
     
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -160,22 +157,15 @@
                             <!-- Header Middle Searchbox Area End Here -->
                             <!-- Begin Header Middle Right Area -->
                             <div class="header-middle-right">
-                                <ul class="hm-menu">
-                                     
-                                    <li class="hm-minicart">
-                                        <div class="hm-minicart-trigger">
-                                            <a href="{% url 'cart_summary' %}"> 
-                                            <span class="item-icon"></span>
-                                             <span class="item-text">Kes 80.00
-                                                <span class="cart-item-count">20</span>
-                                            </span>
-                                        </a>
-                                        </div>
-                                        <span></span>
-                                        
-                                    </li> 
-                                   
-                                </ul>
+                                <li class="hm-minicart">
+                                    <div class="hm-minicart-trigger">
+                                      <a href="{% url 'cart_summary' %}" onclick="window.location.href=this.href; return false;">
+                                        <span class="item-icon"></span>
+                                        <span class="item-text" id="cart-quantity">{{ cart | length }}</span> <span class="cart-item-count">{{product.id}}</span></span>
+                                      </a>
+                                    </div>
+                                    <span></span>
+                                  </li>
                             </div>
                             <!-- Header Middle Right Area End Here -->
                         </div>
@@ -220,6 +210,18 @@
                 </div>
             </div>
             <!-- Header Bottom Area End Here -->
+            <!-- Begin Mobile Menu Area -->
+            <div class="mobile-menu-area d-lg-none d-xl-none col-12">
+                <div class="container"> 
+                    <div class="row">
+                        <div class="mobile-menu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area End Here -->
+        </header>
+        <!-- Header Area End Here -->
             <!-- Begin Mobile Menu Area -->
             <div class="mobile-menu-area d-lg-none d-xl-none col-12">
                 <div class="container"> 
@@ -374,7 +376,7 @@
                                         <br>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#">Add to cart</a></li><span>
+                                                <li class="add-cart active" data-product-id="{{ product.id }}" id="add-Cart">Add Product</a></li>
                                                     <br></br>
                                                     <li class="add-cart active"><a href="{% url 'product' product.id %}">View Product</a>
                                                   
@@ -785,6 +787,35 @@
         <script src="{% static '/scrollUp.min.js' %}"></script>
         <!-- Main/Activator js -->
         <script src="{% static 'js/main.js' %}"></script>
+
+        <script>
+            $(document).ready(function() {
+              // Check if the button is clicked
+              $(document).on('click', '#add-Cart', function(e) {
+                e.preventDefault();
+                var productId = $(this).data('product-id'); // Get the product ID from the button's data attribute
+            
+                $.ajax({
+                  type: 'POST',
+                  url: '{% url 'cart_add' %}', // Django URL template tag
+                  data: {
+                    product_id: productId, // Use the correct parameter name expected by your view
+                    csrfmiddlewaretoken: '{{ csrf_token }}', // Django CSRF token
+                    action: 'post' // Additional parameter, if needed
+                  },
+                  success: function(json) {
+                   {% comment %} console.log(json); {% endcomment %}
+                    // Handle success response
+                    document.getElementById('cart_quantity').
+                    textContent = json.qty
+                  },
+                  error: function(xhr, errmsg, err) {
+                    console.log(xhr.status + ': ' + xhr.responseText); // Log the error
+                  }
+                });
+              });
+            });
+            </script>
       
     </body>
 

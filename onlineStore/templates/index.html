@@ -3,234 +3,227 @@
 
 <!doctype html>
 <html class="no-js" lang="zxx">
-
 <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>East Africa Store</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
-        <!-- Material Design Iconic Font-V2.2.0 -->
-        <link rel="stylesheet" href="{% static 'css/material-design-iconic-font.min.css ' %}">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-        <!-- Font Awesome Stars-->
-        <link rel="stylesheet" href="{% static 'css/fontawesome-stars.css' %}">
-        <!-- Meanmenu CSS -->
-        <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
-        <!-- owl carousel CSS -->
-        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-        <!-- Slick Carousel CSS -->
-        <link rel="stylesheet" href="{% static 'css/slick.css' %}">
-        <!-- Animate CSS -->
-        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-        <!-- Jquery-ui CSS -->
-        <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
-        <!-- Venobox CSS -->
-        <link rel="stylesheet" href="{% static 'css/venobox.css' %}">
-        <!-- Nice Select CSS -->
-        <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
-        <!-- Magnific Popup CSS -->
-        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-        <!-- Bootstrap V4.1.3 Fremwork CSS -->
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <!-- Helper CSS -->
-        <link rel="stylesheet" href="{% static 'css/helper.css' %}">
-        <!-- Main Style CSS -->
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-        <!-- Modernizr js -->
-        <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
-        
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>East Africa Store</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+    <!-- Material Design Iconic Font-V2.2.0 -->
+    <link rel="stylesheet" href="{% static 'css/material-design-iconic-font.min.css ' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- Font Awesome Stars-->
+    <link rel="stylesheet" href="{% static 'css/fontawesome-stars.css' %}">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Jquery-ui CSS -->
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+    <!-- Venobox CSS -->
+    <link rel="stylesheet" href="{% static 'css/venobox.css' %}">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <!-- Bootstrap V4.1.3 Fremwork CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Helper CSS -->
+    <link rel="stylesheet" href="{% static 'css/helper.css' %}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Modernizr js -->
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% if messages %}
+        <div id="message-container">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-        {% if messages %}
-            <div id="message-container">
-                {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                        <strong>{{ message }}</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
 
 
-   
-        <!-- Begin Body Wrapper -->
-        <div class="body-wrapper">
-            <!-- Begin Header Area -->
-            <header>
-                <!-- Begin Header Top Area -->
-                <div class="header-top">
-                    <div class="container">
-                        <div class="row">
-                            <!-- Begin Header Top Left Area -->
-                            <div class="col-lg-3 col-md-4">
-                                <div class="header-top-left">
-                                    <ul class="phone-wrap">
-                                        <li><span>Telephone Enquiry:</span><a href="#">(+254) 798 +++ +++</a></li>
-                                    </ul>
-                                </div>
+    <!-- Begin Body Wrapper -->
+    <div class="body-wrapper">
+        <!-- Begin Header Area -->
+        <header>
+            <!-- Begin Header Top Area -->
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <!-- Begin Header Top Left Area -->
+                        <div class="col-lg-3 col-md-4">
+                            <div class="header-top-left">
+                                <ul class="phone-wrap">
+                                    <li><span>Telephone Enquiry:</span><a href="#">(+254) 798 +++ +++</a></li>
+                                </ul>
                             </div>
-                            <!-- Header Top Left Area End Here -->
-                            <!-- Begin Header Top Right Area -->
-                            <div class="col-lg-9 col-md-8">
-                                <div class="header-top-right">
-                                    <ul class="ht-menu">
-                                        <!-- Begin Setting Area -->
-                                        <li>
-                                            <div class="ht-setting-trigger"><span>Setting</span></div>
-                                            <div class="setting ht-setting">
-                                                <ul class="ht-setting-list">
-                                                    <!-- Login -->
-                                                    {% comment %} <li><a href="{% url 'checkout' %}">Checkout</a></li> {% endcomment %}
-                                                    
-                                                    {% if user.is_authenticated %}
-
-                                                    <li><a href="{% url 'logout' %}">logout</a></li>
-                                                    {% else %}
-                                                    <li><a href="{% url 'login' %}">login</a></li>
-                                                   
-                                                    <li><a href="{% url 'register' %}">Register</a></li>
-                                                    {% endif %}
-                                                <!-- Register -->
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <!-- Setting Area End Here -->
-                                        <!-- Begin Currency Area -->
-                                        <li>
-                                            <span class="currency-selector-wrapper">Currency :</span>
-                                            <div class="ht-currency-trigger"><span>Kes </span></div>
-                                            <div class="currency ht-currency">
-                                                <ul class="ht-setting-list">
-                                                    <li><a href="#">Kes </a></li>
-                                                    <li class="active"><a href="#">Kes </a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <!-- Currency Area End Here -->
-                                        <!-- Begin Language Area -->
-                                        <li>
-                                            <span class="language-selector-wrapper">Language :</span>
-                                            <div class="ht-language-trigger"><span>English</span></div>
-                                            <div class="language ht-language">
-                                                <ul class="ht-setting-list">
-                                                    <li class="active"><a href="#"><img src="{% static 'images/menu/flag-icon/1.jpg' %}" alt="">English</a></li>
-                                                    <li><a href="#"><img src="{% static 'images/menu/flag-icon/2.jpg' %}" alt="">Français</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <!-- Language Area End Here -->
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Header Top Right Area End Here -->
                         </div>
+                        <!-- Header Top Left Area End Here -->
+                        <!-- Begin Header Top Right Area -->
+                        <div class="col-lg-9 col-md-8">
+                            <div class="header-top-right">
+                                <ul class="ht-menu">
+                                    <!-- Begin Setting Area -->
+                                    <li>
+                                        <div class="ht-setting-trigger"><span>Setting</span></div>
+                                        <div class="setting ht-setting">
+                                            <ul class="ht-setting-list">
+                                                <!-- Login -->
+                                                {% comment %} <li><a href="{% url 'checkout' %}">Checkout</a></li> {% endcomment %}
+                                                
+                                                {% if user.is_authenticated %}
+
+                                                <li><a href="{% url 'logout' %}">logout</a></li>
+                                                {% else %}
+                                                <li><a href="{% url 'login' %}">login</a></li>
+                                               
+                                                <li><a href="{% url 'register' %}">Register</a></li>
+                                                {% endif %}
+                                            <!-- Register -->
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!-- Setting Area End Here -->
+                                    <!-- Begin Currency Area -->
+                                    <li>
+                                        <span class="currency-selector-wrapper">Currency :</span>
+                                        <div class="ht-currency-trigger"><span>Kes </span></div>
+                                        <div class="currency ht-currency">
+                                            <ul class="ht-setting-list">
+                                                <li><a href="#">Kes </a></li>
+                                                <li class="active"><a href="#">Kes </a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!-- Currency Area End Here -->
+                                    <!-- Begin Language Area -->
+                                    <li>
+                                        <span class="language-selector-wrapper">Language :</span>
+                                        <div class="ht-language-trigger"><span>English</span></div>
+                                        <div class="language ht-language">
+                                            <ul class="ht-setting-list">
+                                                <li class="active"><a href="#"><img src="{% static 'images/menu/flag-icon/1.jpg' %}" alt="">English</a></li>
+                                                <li><a href="#"><img src="{% static 'images/menu/flag-icon/2.jpg' %}" alt="">Français</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!-- Language Area End Here -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Header Top Right Area End Here -->
                     </div>
                 </div>
-                <!-- Header Top Area End Here -->
-                <!-- Begin Header Middle Area -->
-                <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
-                    <div class="container">
-                        <div class="row">
-                            <!-- Begin Header Logo Area -->
-                            <div class="col-lg-3">
-                                <div class="logo pb-sm-30 pb-xs-30">
-                                    <a href="{% url 'index' %}">
-                                        <img src="{% static 'images/menu/logo/1.jpg' %}" alt="">
-                                    </a>
-                                </div>
+            </div>
+            <!-- Header Top Area End Here -->
+            <!-- Begin Header Middle Area -->
+            <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
+                <div class="container">
+                    <div class="row">
+                        <!-- Begin Header Logo Area -->
+                        <div class="col-lg-3">
+                            <div class="logo pb-sm-30 pb-xs-30">
+                                <a href="{% url 'index' %}">
+                                    <img src="{% static 'images/menu/logo/1.jpg' %}" alt="">
+                                </a>
                             </div>
-                            <!-- Header Logo Area End Here -->
+                        </div>
+                        <!-- Header Logo Area End Here -->
+                        <!-- Begin Header Middle Right Area -->
+                        <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
+                            <!-- Begin Header Middle Searchbox Area -->
+                            <form action="#" class="hm-searchbox">
+                                <input type="text" placeholder="Enter your search key ...">
+                                <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <!-- Header Middle Searchbox Area End Here -->
                             <!-- Begin Header Middle Right Area -->
-                            <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
-                                <!-- Begin Header Middle Searchbox Area -->
-                                <form action="#" class="hm-searchbox">
-                                    <input type="text" placeholder="Enter your search key ...">
-                                    <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                                <!-- Header Middle Searchbox Area End Here -->
-                                <!-- Begin Header Middle Right Area -->
-                                <div class="header-middle-right">
-                                    <ul class="hm-menu">
-                                         
-                                        <li class="hm-minicart">
-                                            <div class="hm-minicart-trigger">
-                                                <a href="{% url 'cart_summary' %}"> 
-                                                <span class="item-icon"></span>
-                                                 <span class="item-text">Kes 80.00
-                                                    <span class="cart-item-count">20</span>
-                                                </span>
-                                            </a>
-                                            </div>
-                                            <span></span>
-                                            
-                                        </li> 
-                                       
-                                    </ul>
-                                </div>
-                                <!-- Header Middle Right Area End Here -->
+                            <div class="header-middle-right">
+                                <li class="hm-minicart">
+                                    <div class="hm-minicart-trigger">
+                                      <a href="{% url 'cart_summary' %}" onclick="window.location.href=this.href; return false;">
+                                        <span class="item-icon"></span>
+                                        <span class="item-text" id="cart-quantity">{{ cart | length }}</span> <span class="cart-item-count">{{product.id}}</span></span>
+                                      </a>
+                                    </div>
+                                    <span></span>
+                                  </li>
                             </div>
                             <!-- Header Middle Right Area End Here -->
                         </div>
+                        <!-- Header Middle Right Area End Here -->
                     </div>
                 </div>
-                <!-- Header Middle Area End Here -->
-                <!-- Begin Header Bottom Area -->
-                <div class="header-bottom header-sticky d-none d-lg-block d-xl-block">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <!-- Begin Header Bottom Menu Area -->
-                                <div class="hb-menu">
-                                    <nav>
-                                        <ul>
-                                            <li class="dropdown-holder"><a href="index.html">Home</a>
-                                                <ul class="hb-dropdown">
-                                                    <li class="active"><a href="index.html">Home</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="megamenu-holder"><a href="shop-left-sidebar.html">Shop</a>
-                                                <ul class="megamenu hb-megamenu">
-                                                    <li><a href="{% url "index" %}">All Products</a> 
-                                                    <li><a href="{% url 'category' "Mobile-Phone" %}">Mobile phones</a>
-                                                    </li>
-                                                    <li><a href="{% url 'category' "TV-AUDIO" %}">TV & AUDIO</a>
-                                                    </li>
-                                                    <li><a href="{% url 'category' "Laptop" %}">Laptop</a>
-                                                    </li>
-                                                    
-    
-                                                </ul>
-                                            </li>
-                                           
-                                    </nav>
-                                </div>
-                                <!-- Header Bottom Menu Area End Here -->
+            </div>
+            <!-- Header Middle Area End Here -->
+            <!-- Begin Header Bottom Area -->
+            <div class="header-bottom header-sticky d-none d-lg-block d-xl-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Begin Header Bottom Menu Area -->
+                            <div class="hb-menu">
+                                <nav>
+                                    <ul>
+                                        <li class="dropdown-holder"><a href="index.html">Home</a>
+                                            <ul class="hb-dropdown">
+                                                <li class="active"><a href="index.html">Home</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="megamenu-holder"><a href="shop-left-sidebar.html">Shop</a>
+                                            <ul class="megamenu hb-megamenu">
+                                                <li><a href="{% url "index" %}">All Products</a> 
+                                                <li><a href="{% url 'category' "Mobile-Phone" %}">Mobile phones</a>
+                                                </li>
+                                                <li><a href="{% url 'category' "TV-AUDIO" %}">TV & AUDIO</a>
+                                                </li>
+                                                <li><a href="{% url 'category' "Laptop" %}">Laptop</a>
+                                                </li>
+                                                
+
+                                            </ul>
+                                        </li>
+                                       
+                                </nav>
                             </div>
+                            <!-- Header Bottom Menu Area End Here -->
                         </div>
                     </div>
                 </div>
-                <!-- Header Bottom Area End Here -->
-                <!-- Begin Mobile Menu Area -->
-                <div class="mobile-menu-area d-lg-none d-xl-none col-12">
-                    <div class="container"> 
-                        <div class="row">
-                            <div class="mobile-menu">
-                            </div>
+            </div>
+            <!-- Header Bottom Area End Here -->
+            <!-- Begin Mobile Menu Area -->
+            <div class="mobile-menu-area d-lg-none d-xl-none col-12">
+                <div class="container"> 
+                    <div class="row">
+                        <div class="mobile-menu">
                         </div>
                     </div>
                 </div>
-                <!-- Mobile Menu Area End Here -->
-            </header>
-            <!-- Header Area End Here -->
+            </div>
+            <!-- Mobile Menu Area End Here -->
+        </header>
+        <!-- Header Area End Here -->
+
             
             <!-- Begin Slider With Banner Area -->
             <div class="slider-with-banner">
@@ -373,7 +366,7 @@
                                         <br>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#">Add to cart</a></li><span>
+                                                <li class="add-cart active" data-product-id="{{ product.id }}" id="add-Cart">Add to Cart</a></li>
                                                     <br></br>
                                                     <li class="add-cart active"><a href="{% url 'product' product.id %}">View Product</a>
                                                   
@@ -459,7 +452,7 @@
                                         <br>
                                         <div class="add-actions">
                                             <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#">Add to cart</a></li>
+                                                <li class="add-cart active" data-product-id="{{ product.id }}" id="add-Cart">Add to Cart</a></li>
                                                 <br></br>
                                                 <li class="add-cart active"><a href="{% url 'product' product.id %}">View Product</a>
                                                 <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -864,6 +857,35 @@
         <!-- Main/Activator js -->
         <script src="{% static 'js/main.js' %}"></script>
       
+
+        <script>
+            $(document).ready(function() {
+              // Check if the button is clicked
+              $(document).on('click', '#add-Cart', function(e) {
+                e.preventDefault();
+                var productId = $(this).data('product-id'); // Get the product ID from the button's data attribute
+            
+                $.ajax({
+                  type: 'POST',
+                  url: '{% url 'cart_add' %}', // Django URL template tag
+                  data: {
+                    product_id: productId, // Use the correct parameter name expected by your view
+                    csrfmiddlewaretoken: '{{ csrf_token }}', // Django CSRF token
+                    action: 'post' // Additional parameter, if needed
+                  },
+                  success: function(json) {
+                   {% comment %} console.log(json); {% endcomment %}
+                    // Handle success response
+                    document.getElementById('cart_quantity').
+                    textContent = json.qty
+                  },
+                  error: function(xhr, errmsg, err) {
+                    console.log(xhr.status + ': ' + xhr.responseText); // Log the error
+                  }
+                });
+              });
+            });
+            </script>
     </body>
 
 <!-- index30:23-->
