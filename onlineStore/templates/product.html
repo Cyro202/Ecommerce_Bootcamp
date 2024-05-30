@@ -299,44 +299,53 @@
 </div>>
 
 <div class="container">
-                <div class="card mb-3">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">{{ product.name}}</h5>
-                          <p class="card-text">{{ product.description}}.</p>
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}.</p>
 
-                          {% if product.is_sale %}
-                    
+                    {% if product.is_sale %}
                         <div class="price-box">
-                            <span class="new-price"><strike>Kes {{product.price}}</strike></span>
+                            <span class="new-price"><strike>Kes {{ product.price }}</strike></span>
                         </div>
-                       
                         <div class="price-box">
-                            <span class="new-price">Kes {{product.sale_price}}</span>
+                            <span class="new-price">Kes {{ product.sale_price }}</span>
                         </div>
-                        
-                
-                          {% else %}
+                    {% else %}
+                        Kes {{ product.price }}
+                    {% endif %}
+                    <br>
 
-                          Kes {{ product.price }}
-                          {% endif %}
-                          <br></br>
-                          <span>
-                          <a href="{% url 'index'%}" class="btn btn-primary">Home</a>
-                          </span>
-                          <br></br>
-                          <span>
-                            <button type="button" class="btn btn-secondary" data-product-id="{{ product.id }}" id="add-Cart">Add to Cart</button> </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    <div class="col-md-2">Quantity: </div>
 
+                    <select class="form-select form-select-sm justify-content-center" id="qty-cart">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <br><br>
+
+                    <span>
+                        <a href="{% url 'index' %}" class="btn btn-primary">Home</a>
+                    </span>
+                    <br><br>
+                    <span>
+                        <button type="button" class="btn btn-secondary" data-product-id="{{ product.id }}" id="add-Cart">Add to Cart</button>
+                    </span>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
   
                    <!-- Begin Footer Static Middle Area -->
                    <div class="footer-static-middle">
@@ -627,32 +636,34 @@
 
         <script>
             $(document).ready(function() {
-              // Check if the button is clicked
-              $(document).on('click', '#add-Cart', function(e) {
-                e.preventDefault();
-                var productId = $(this).data('product-id'); // Get the product ID from the button's data attribute
-            
-                $.ajax({
-                  type: 'POST',
-                  url: '{% url 'cart_add' %}', // Django URL template tag
-                  data: {
-                    product_id: productId, // Use the correct parameter name expected by your view
-                    csrfmiddlewaretoken: '{{ csrf_token }}', // Django CSRF token
-                    action: 'post' // Additional parameter, if needed
-                  },
-                  success: function(json) {
-                   {% comment %} console.log(json); {% endcomment %}
-                    // Handle success response
-                    document.getElementById('cart_quantity').
-                    textContent = json.qty
-                  },
-                  error: function(xhr, errmsg, err) {
-                    console.log(xhr.status + ': ' + xhr.responseText); // Log the error
-                  }
+                // Check if the button is clicked
+                $(document).on('click', '#add-Cart', function(e) {
+                    e.preventDefault();
+                    var productId = $(this).data('product-id'); // Get the product ID from the button's data attribute
+        
+                    $.ajax({
+                        type: 'POST',
+                        url: '{% url 'cart_add' %}', // Django URL template tag
+                        data: {
+                            product_id: productId,
+                            product_qty: $('#qty-cart option:selected').text(), // Use the correct parameter name expected by your view
+                            csrfmiddlewaretoken: '{{ csrf_token }}', // Django CSRF token
+                            action: 'post' // Additional parameter, if needed
+                        },
+                        success: function(json) {
+                            // Handle success response
+                            // console.log(json); 
+                            document.getElementById('cart_quantity').textContent = json.qty;
+                            location.reload();
+                        },
+                        error: function(xhr, errmsg, err) {
+                            console.log(xhr.status + ': ' + xhr.responseText); // Log the error
+                        }
+                    });
                 });
-              });
             });
-            </script>
+        </script>
+        
       
     </body>
 
